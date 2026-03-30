@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+:root {
+  --background: #060606;
+  --foreground: #e4e4e7;
+
+  --site-border: rgba(255, 255, 255, 0.06);
+  --site-border-medium: rgba(255, 255, 255, 0.08);
+  --site-border-strong: rgba(255, 255, 255, 0.1);
+  --site-border-accent: rgba(255, 255, 255, 0.12);
+  --site-border-finish: rgba(255, 255, 255, 0.18);
+  --site-border-finish-active: rgba(255, 255, 255, 0.25);
+
+  --ambient-bg: #060606;
+  --ambient-grad-a: radial-gradient(
+    ellipse at center,
+    rgba(120, 120, 128, 0.12) 0%,
+    transparent 65%
+  );
+  --ambient-grad-b: radial-gradient(
+    ellipse at center,
+    rgba(80, 80, 88, 0.1) 0%,
+    transparent 60%
+  );
+
+  --hero-base: #070708;
+  --hero-radial-warm: radial-gradient(
+    ellipse 75% 55% at 50% 42%,
+    rgba(201, 162, 39, 0.09),
+    transparent 72%
+  );
+  --hero-radial-cool: radial-gradient(
+    ellipse 90% 70% at 50% 100%,
+    rgba(90, 86, 78, 0.14),
+    transparent 55%
+  );
+  --hero-vignette: linear-gradient(
+    180deg,
+    rgba(6, 6, 8, 0.2) 0%,
+    transparent 28%,
+    transparent 62%,
+    rgba(4, 4, 6, 0.85) 100%
+  );
+  --site-label-warm: #a89b88;
+  --hero-title-one-from: #fafafa;
+  --hero-title-one-via: #e8e0d4;
+  --finish-active-bg: rgba(255, 255, 255, 0.06);
+  --finish-inactive-hover-border: rgba(255, 255, 255, 0.18);
+
+  --sound-line: rgba(255, 255, 255, 0.1);
+
+  --section-design-bg: #070707;
+  --section-specs-bg: #050505;
+  --section-feature-card: #080808;
+  --overview-frame-bg: #0a0a0a;
+  --overview-frame-inset: rgba(255, 255, 255, 0.04);
+  --overview-deco-border: rgba(255, 255, 255, 0.07);
+  --overview-deco-from: rgba(255, 255, 255, 0.03);
+  --footer-bg: #050505;
+
+  --design-panel-from: rgba(255, 255, 255, 0.04);
+  --design-panel-inset: rgba(255, 255, 255, 0.05);
+  --design-panel-highlight: rgba(255, 255, 255, 0.04);
+
+  --specs-grid-border: rgba(255, 255, 255, 0.08);
+  --specs-grid-gap: rgba(255, 255, 255, 0.08);
+
+  --purchase-card-border: rgba(255, 255, 255, 0.1);
+  --purchase-card-from: rgba(255, 255, 255, 0.03);
+  --purchase-card-inset: rgba(255, 255, 255, 0.05);
+  --purchase-qty-hover: rgba(255, 255, 255, 0.04);
+
+  --premium-border: rgba(255, 255, 255, 0.12);
+  --premium-bg: rgba(255, 255, 255, 0.06);
+  --premium-inset: rgba(255, 255, 255, 0.06);
+  --premium-hover-border: rgba(255, 255, 255, 0.2);
+  --premium-hover-bg: rgba(255, 255, 255, 0.1);
+  --premium-ghost-border: rgba(255, 255, 255, 0.1);
+  --premium-ghost-hover-border: rgba(255, 255, 255, 0.25);
+
+  --brand-radial: radial-gradient(
+    ellipse 70% 60% at 50% 100%,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+
+  --scroll-cue-line: #52525b;
+  --scroll-cue-dot: #d4d4d8;
+
+  --noise-opacity: 0.035;
+}
+
+html[data-site-theme="light"] {
+  --background: #f0ede6;
+  --foreground: #1c1917;
+
+  --site-border: rgba(28, 25, 23, 0.08);
+  --site-border-medium: rgba(28, 25, 23, 0.1);
+  --site-border-strong: rgba(28, 25, 23, 0.12);
+  --site-border-accent: rgba(28, 25, 23, 0.14);
+  --site-border-finish: rgba(28, 25, 23, 0.16);
+  --site-border-finish-active: rgba(28, 25, 23, 0.22);
+
+  --ambient-bg: #ebe8e2;
+  --ambient-grad-a: radial-gradient(
+    ellipse at center,
+    rgba(180, 155, 110, 0.14) 0%,
+    transparent 65%
+  );
+  --ambient-grad-b: radial-gradient(
+    ellipse at center,
+    rgba(140, 120, 90, 0.09) 0%,
+    transparent 60%
+  );
+
+  --hero-base: #ebe8e2;
+  --hero-radial-warm: radial-gradient(
+    ellipse 75% 55% at 50% 42%,
+    rgba(201, 168, 98, 0.16),
+    transparent 72%
+  );
+  --hero-radial-cool: radial-gradient(
+    ellipse 90% 70% at 50% 100%,
+    rgba(120, 100, 70, 0.07),
+    transparent 55%
+  );
+  --hero-vignette: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    transparent 30%,
+    transparent 65%,
+    rgba(210, 200, 185, 0.5) 100%
+  );
+  --site-label-warm: #7c6a52;
+  --hero-title-one-from: #1c1917;
+  --hero-title-one-via: #44403c;
+  --finish-active-bg: rgba(255, 255, 255, 0.5);
+  --finish-inactive-hover-border: rgba(28, 25, 23, 0.2);
+
+  --sound-line: rgba(28, 25, 23, 0.12);
+
+  --section-design-bg: #e4e0d6;
+  --section-specs-bg: #dcd7cc;
+  --section-feature-card: #e8e4db;
+  --overview-frame-bg: #ddd9cf;
+  --overview-frame-inset: rgba(255, 255, 255, 0.35);
+  --overview-deco-border: rgba(28, 25, 23, 0.08);
+  --overview-deco-from: rgba(255, 255, 255, 0.45);
+  --footer-bg: #d5d0c4;
+
+  --design-panel-from: rgba(255, 255, 255, 0.55);
+  --design-panel-inset: rgba(255, 255, 255, 0.4);
+  --design-panel-highlight: rgba(255, 255, 255, 0.35);
+
+  --specs-grid-border: rgba(28, 25, 23, 0.1);
+  --specs-grid-gap: rgba(28, 25, 23, 0.06);
+
+  --purchase-card-border: rgba(28, 25, 23, 0.12);
+  --purchase-card-from: rgba(255, 255, 255, 0.55);
+  --purchase-card-inset: rgba(255, 255, 255, 0.35);
+  --purchase-qty-hover: rgba(255, 255, 255, 0.5);
+
+  --premium-border: rgba(28, 25, 23, 0.14);
+  --premium-bg: rgba(255, 255, 255, 0.55);
+  --premium-inset: rgba(255, 255, 255, 0.45);
+  --premium-hover-border: rgba(28, 25, 23, 0.22);
+  --premium-hover-bg: rgba(255, 255, 255, 0.75);
+  --premium-ghost-border: rgba(28, 25, 23, 0.12);
+  --premium-ghost-hover-border: rgba(28, 25, 23, 0.22);
+
+  --brand-radial: radial-gradient(
+    ellipse 70% 60% at 50% 100%,
+    rgba(201, 168, 98, 0.1),
+    transparent
+  );
+
+  --scroll-cue-line: #a8a29e;
+  --scroll-cue-dot: #44403c;
+
+  --noise-opacity: 0.04;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+/* Smooth cross-fade when switching site theme (Chrome / Edge / Safari 18+). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.001ms;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition:
+    background-color 1.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+    color 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/* Fallback: variable-backed section backgrounds / borders ease when View Transitions are unavailable. */
+:where(section, footer) {
+  transition-property: background-color, color, border-color;
+  transition-duration: 1.5s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(section, footer) {
+    transition: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-heading), "Cormorant", ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fafafa;
+}
+
+html[data-site-theme="light"] ::selection {
+  background: rgba(28, 25, 23, 0.12);
+  color: #0c0a09;
+}
+
+/* Light theme: map zinc text utilities to warm stone (components keep class names). */
+html[data-site-theme="light"] .text-zinc-50,
+html[data-site-theme="light"] .text-zinc-100 {
+  color: #0c0a09;
+}
+
+html[data-site-theme="light"] .text-zinc-200 {
+  color: #1c1917;
+}
+
+html[data-site-theme="light"] .text-zinc-300 {
+  color: #292524;
+}
+
+html[data-site-theme="light"] .text-zinc-400 {
+  color: #44403c;
+}
+
+html[data-site-theme="light"] .text-zinc-500 {
+  color: #57534e;
+}
+
+html[data-site-theme="light"] .text-zinc-600 {
+  color: #78716c;
+}
+
+html[data-site-theme="light"] .text-white {
+  color: #0c0a09;
+}
+
+/* Light theme: hover / group-hover zinc utilities (static .text-zinc-* is remapped above; these still used raw palette). */
+@media (hover: hover) {
+  html[data-site-theme="light"] .hover\:text-zinc-50:hover,
+  html[data-site-theme="light"] .hover\:text-zinc-100:hover {
+    color: #0c0a09;
+  }
+
+  html[data-site-theme="light"] .hover\:text-zinc-200:hover {
+    color: #1c1917;
+  }
+
+  html[data-site-theme="light"] .hover\:text-zinc-300:hover {
+    color: #292524;
+  }
+
+  html[data-site-theme="light"] .hover\:text-zinc-400:hover {
+    color: #44403c;
+  }
+
+  html[data-site-theme="light"] .hover\:text-zinc-500:hover {
+    color: #57534e;
+  }
+
+  html[data-site-theme="light"] .hover\:text-zinc-600:hover {
+    color: #78716c;
+  }
+
+  html[data-site-theme="light"] .hover\:text-white:hover {
+    color: #0c0a09;
+  }
+
+  html[data-site-theme="light"]
+    .group-hover\:text-zinc-300:is(:where(.group):hover *) {
+    color: #292524;
+  }
+}
+
+/* Hero + scroll-linked 3D: R3F wraps canvas in nested divs; force transparent compositing (no visible “panel”). */
+#hero .product-stage-root,
+#hero .product-stage-root > div,
+#hero .product-stage-root > div > div,
+#hero .product-stage-root canvas,
+#hero .hero-product-stage,
+#scroll-linked-product .product-stage-root,
+#scroll-linked-product .product-stage-root > div,
+#scroll-linked-product .product-stage-root > div > div,
+#scroll-linked-product .product-stage-root canvas,
+#scroll-linked-product .scroll-linked-product-stage {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
